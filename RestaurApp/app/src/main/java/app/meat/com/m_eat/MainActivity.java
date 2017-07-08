@@ -1,5 +1,6 @@
 package app.meat.com.m_eat;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -97,5 +98,10 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    //call to Tab Activity
+    public void goToAnActivity(View view) {
+        Intent Intent = new Intent(this, main_tab_layout.class);
+        startActivity(Intent);
     }
 }
