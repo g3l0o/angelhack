@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1031920454444-iqjvll1crogb1kr2cs0pe03qt79ie2eh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.meat.com.m_eat",
+            "certificate_hash": "3e31be9a21abd7e052daef53d2a8512c1e9e5570"
+          }
+        },
+        {
           "client_id": "1031920454444-jpistc13sh4126584avg4mvb75ejd32n.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
