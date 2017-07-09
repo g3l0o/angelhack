@@ -45,7 +45,7 @@ public class RVFlagAdapter extends RecyclerView.Adapter<VendedoresHolder> {
     @Override
     public void onBindViewHolder(final VendedoresHolder holder, int position) {
         Vendedores vendedor = vendedores.get(position);
-        holder.vendorName.setText(vendedor.getNombreCompleto());
+        holder.vendorName.setText(vendedor.getNombres());
 
         if(!vendedor.getImagen().isEmpty()){
             FirebaseStorage storage = FirebaseStorage.getInstance();

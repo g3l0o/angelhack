@@ -28,6 +28,13 @@ public class Horario implements Parcelable {
         this.horaFin = horaFin;
     }
 
+    public String getHoraIn() {
+        return horaIn;
+    }
+
+    public void setHoraIn(String horaIn) {
+        this.horaIn = horaIn;
+    }
 
     @Override
     public int describeContents() {

@@ -13,26 +13,29 @@ public class Vendedores implements Parcelable {
     private String ApPaterno;
     private String ApMaterno;
     private String Categoria;
-    private ArrayList<Cocina> Cocinas;
-    private int Edad;
+    private ArrayList<Cocina> Cocina;
+    private Long Edad;
     private String Experiencia;
     private ArrayList<Horario> Horarios;
-    private ArrayList<Idioma> Idiomas;
+    private ArrayList<app.meat.com.m_eat.Idiomas> Idiomas;
     private float Latitud;
     private float Longitud;
     private String Nacionalidad;
-    private String Nombre;
+    private String Nombres;
     private String Pais;
     private String Sexo;
     private String Tarjeta;
     private String Imagen;
     private ArrayList<Telefono> Telefonos;
 
-    public Vendedores(String apPaterno, String apMaterno, String categoria, ArrayList<Cocina> cocinas, int edad, String experiencia, ArrayList<Horario> horarios, ArrayList<Idioma> idiomas, float latitud, float longitud, String nacionalidad, String nombre, String pais, String sexo, String tarjeta, String imagen, ArrayList<Telefono> telefonos) {
+    public Vendedores() {
+    }
+
+    public Vendedores(String apPaterno, String apMaterno, String categoria, ArrayList<app.meat.com.m_eat.Cocina> cocina, Long edad, String experiencia, ArrayList<Horario> horarios, ArrayList<app.meat.com.m_eat.Idiomas> idiomas, float latitud, float longitud, String nacionalidad, String nombres, String pais, String sexo, String tarjeta, String imagen, ArrayList<Telefono> telefonos) {
         ApPaterno = apPaterno;
         ApMaterno = apMaterno;
         Categoria = categoria;
-        Cocinas = cocinas;
+        Cocina = cocina;
         Edad = edad;
         Experiencia = experiencia;
         Horarios = horarios;
@@ -40,15 +43,12 @@ public class Vendedores implements Parcelable {
         Latitud = latitud;
         Longitud = longitud;
         Nacionalidad = nacionalidad;
-        Nombre = nombre;
+        Nombres = nombres;
         Pais = pais;
         Sexo = sexo;
         Tarjeta = tarjeta;
         Imagen = imagen;
         Telefonos = telefonos;
-    }
-
-    public Vendedores() {
     }
 
     public String getApPaterno() {
@@ -75,19 +75,19 @@ public class Vendedores implements Parcelable {
         Categoria = categoria;
     }
 
-    public ArrayList<Cocina> getCocinas() {
-        return Cocinas;
+    public ArrayList<app.meat.com.m_eat.Cocina> getCocina() {
+        return Cocina;
     }
 
-    public void setCocinas(ArrayList<Cocina> cocinas) {
-        Cocinas = cocinas;
+    public void setCocina(ArrayList<app.meat.com.m_eat.Cocina> cocina) {
+        Cocina = cocina;
     }
 
-    public int getEdad() {
+    public Long getEdad() {
         return Edad;
     }
 
-    public void setEdad(int edad) {
+    public void setEdad(Long edad) {
         Edad = edad;
     }
 
@@ -107,11 +107,11 @@ public class Vendedores implements Parcelable {
         Horarios = horarios;
     }
 
-    public ArrayList<Idioma> getIdiomas() {
+    public ArrayList<app.meat.com.m_eat.Idiomas> getIdiomas() {
         return Idiomas;
     }
 
-    public void setIdiomas(ArrayList<Idioma> idiomas) {
+    public void setIdiomas(ArrayList<app.meat.com.m_eat.Idiomas> idiomas) {
         Idiomas = idiomas;
     }
 
@@ -139,12 +139,12 @@ public class Vendedores implements Parcelable {
         Nacionalidad = nacionalidad;
     }
 
-    public String getNombre() {
-        return Nombre;
+    public String getNombres() {
+        return Nombres;
     }
 
-    public void setNombre(String nombre) {
-        Nombre = nombre;
+    public void setNombres(String nombres) {
+        Nombres = nombres;
     }
 
     public String getPais() {
@@ -188,11 +188,6 @@ public class Vendedores implements Parcelable {
     }
 
 
-
-    public String getNombreCompleto(){
-        return getNombre()+" "+getApPaterno()+" "+getApMaterno();
-    }
-
     @Override
     public int describeContents() {
         return 0;
@@ -203,15 +198,15 @@ public class Vendedores implements Parcelable {
         dest.writeString(this.ApPaterno);
         dest.writeString(this.ApMaterno);
         dest.writeString(this.Categoria);
-        dest.writeTypedList(this.Cocinas);
-        dest.writeInt(this.Edad);
+        dest.writeTypedList(this.Cocina);
+        dest.writeValue(this.Edad);
         dest.writeString(this.Experiencia);
         dest.writeTypedList(this.Horarios);
         dest.writeTypedList(this.Idiomas);
         dest.writeFloat(this.Latitud);
         dest.writeFloat(this.Longitud);
         dest.writeString(this.Nacionalidad);
-        dest.writeString(this.Nombre);
+        dest.writeString(this.Nombres);
         dest.writeString(this.Pais);
         dest.writeString(this.Sexo);
         dest.writeString(this.Tarjeta);
@@ -223,15 +218,15 @@ public class Vendedores implements Parcelable {
         this.ApPaterno = in.readString();
         this.ApMaterno = in.readString();
         this.Categoria = in.readString();
-        this.Cocinas = in.createTypedArrayList(Cocina.CREATOR);
-        this.Edad = in.readInt();
+        this.Cocina = in.createTypedArrayList(app.meat.com.m_eat.Cocina.CREATOR);
+        this.Edad = (Long) in.readValue(Long.class.getClassLoader());
         this.Experiencia = in.readString();
         this.Horarios = in.createTypedArrayList(Horario.CREATOR);
-        this.Idiomas = in.createTypedArrayList(Idioma.CREATOR);
+        this.Idiomas = in.createTypedArrayList(app.meat.com.m_eat.Idiomas.CREATOR);
         this.Latitud = in.readFloat();
         this.Longitud = in.readFloat();
         this.Nacionalidad = in.readString();
-        this.Nombre = in.readString();
+        this.Nombres = in.readString();
         this.Pais = in.readString();
         this.Sexo = in.readString();
         this.Tarjeta = in.readString();

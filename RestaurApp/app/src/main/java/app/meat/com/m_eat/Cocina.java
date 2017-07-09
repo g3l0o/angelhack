@@ -26,20 +26,6 @@ public class Cocina implements Parcelable {
         Nombre = nombre;
     }
 
-    protected Cocina(Parcel in) {
-    }
-
-    public static final Creator<Cocina> CREATOR = new Creator<Cocina>() {
-        @Override
-        public Cocina createFromParcel(Parcel in) {
-            return new Cocina(in);
-        }
-
-        @Override
-        public Cocina[] newArray(int size) {
-            return new Cocina[size];
-        }
-    };
 
     @Override
     public int describeContents() {
@@ -48,5 +34,22 @@ public class Cocina implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.Nombre);
     }
+
+    protected Cocina(Parcel in) {
+        this.Nombre = in.readString();
+    }
+
+    public static final Creator<Cocina> CREATOR = new Creator<Cocina>() {
+        @Override
+        public Cocina createFromParcel(Parcel source) {
+            return new Cocina(source);
+        }
+
+        @Override
+        public Cocina[] newArray(int size) {
+            return new Cocina[size];
+        }
+    };
 }

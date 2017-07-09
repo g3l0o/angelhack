@@ -7,14 +7,14 @@ import android.os.Parcelable;
  * Created by Rogelio Rivera on 7/9/2017.
  */
 
-public class Idioma implements Parcelable {
+public class Idiomas implements Parcelable {
     private String Nombre;
 
-    public Idioma(String nombre) {
+    public Idiomas(String nombre) {
         Nombre = nombre;
     }
 
-    public Idioma() {
+    public Idiomas() {
     }
 
     public String getNombre() {
@@ -36,19 +36,19 @@ public class Idioma implements Parcelable {
         dest.writeString(this.Nombre);
     }
 
-    protected Idioma(Parcel in) {
+    protected Idiomas(Parcel in) {
         this.Nombre = in.readString();
     }
 
-    public static final Parcelable.Creator<Idioma> CREATOR = new Parcelable.Creator<Idioma>() {
+    public static final Creator<Idiomas> CREATOR = new Creator<Idiomas>() {
         @Override
-        public Idioma createFromParcel(Parcel source) {
-            return new Idioma(source);
+        public Idiomas createFromParcel(Parcel source) {
+            return new Idiomas(source);
         }
 
         @Override
-        public Idioma[] newArray(int size) {
-            return new Idioma[size];
+        public Idiomas[] newArray(int size) {
+            return new Idiomas[size];
         }
     };
 }
