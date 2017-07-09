@@ -140,7 +140,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
         markerOptions.title("Current Position");
-        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));//
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(0.0400f));//
         mCurrLocationMarker = iGoogleMap.addMarker(markerOptions);
 
         //move map camera
