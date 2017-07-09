@@ -27,7 +27,7 @@ public class Vendedores implements Parcelable {
     private String Tarjeta;
     private ArrayList<Telefono> Telefonos;
 
-    public Vendedores{
+    public Vendedores(){
 
     }
 
