@@ -6,14 +6,15 @@
 
     <com.google.android.gms.maps.MapView
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="match_parent"
         android:id="@+id/mapa">
     </com.google.android.gms.maps.MapView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="invisible">
 
         <TextView
             android:layout_width="match_parent"
@@ -21,17 +22,14 @@
             android:text="ELEMENTOS"
             android:gravity="center_horizontal"/>
 
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+
             <android.support.v7.widget.RecyclerView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:id="@+id/recycler_view_flag_elements">
 
             </android.support.v7.widget.RecyclerView>
-        </HorizontalScrollView>
 
     </LinearLayout>
 
