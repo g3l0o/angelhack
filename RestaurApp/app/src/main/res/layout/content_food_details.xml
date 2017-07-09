@@ -6,7 +6,9 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="app.meat.com.m_eat.FoodDetails"
-    tools:showIn="@layout/activity_food_details">
+    tools:showIn="@layout/activity_food_details"
+    android:id="@+id/nested_view"
+    android:background="@drawable/mex">
 
     <TextView
         android:layout_width="wrap_content"

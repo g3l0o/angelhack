@@ -12,16 +12,28 @@ public class Vendedor implements Parcelable{
     private String ApPaterno;
     private String Nombre;
     private Long id;
+    private String Nacionalidad;
 
-    public Vendedor(String apMaterno, String apPaterno, String nombre, Long id) {
+    public Vendedor(String apMaterno, String apPaterno, String nombre, Long id, String nacionalidad) {
         ApMaterno = apMaterno;
         ApPaterno = apPaterno;
         Nombre = nombre;
+        Nacionalidad = nacionalidad;
+
         this.id = id;
     }
 
     public Vendedor() {
     }
+
+    public String getNacionalidad() {
+        return Nacionalidad;
+    }
+
+    public void setNacionalidad(String nacionalidad) {
+        Nacionalidad = nacionalidad;
+    }
+
 
     public Long getId() {
         return id;
@@ -68,6 +80,7 @@ public class Vendedor implements Parcelable{
         dest.writeString(this.ApPaterno);
         dest.writeString(this.Nombre);
         dest.writeValue(this.id);
+        dest.writeString(this.Nacionalidad);
     }
 
     protected Vendedor(Parcel in) {
@@ -75,6 +88,7 @@ public class Vendedor implements Parcelable{
         this.ApPaterno = in.readString();
         this.Nombre = in.readString();
         this.id = (Long) in.readValue(Long.class.getClassLoader());
+        this.Nacionalidad = in.readString();
     }
 
     public static final Creator<Vendedor> CREATOR = new Creator<Vendedor>() {
