@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1031920454444",
+    "firebase_url": "https://m-eat-342e8.firebaseio.com",
+    "project_id": "m-eat-342e8",
+    "storage_bucket": "m-eat-342e8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1031920454444:android:b816b2485991275f",
+        "android_client_info": {
+          "package_name": "app.meat.com.m_eat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1031920454444-jpistc13sh4126584avg4mvb75ejd32n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.meat.com.m_eat",
+            "certificate_hash": "733861a40d78e9655d28ebfe4cee473d6363ad91"
+          }
+        },
+        {
+          "client_id": "1031920454444-fpvkqfu2pih88vb20sg8pvd4bcijc5pd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqiXMLfMZXov1xifV2P8kakHlZ6G3Zvs0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1031920454444-fpvkqfu2pih88vb20sg8pvd4bcijc5pd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
