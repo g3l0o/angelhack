@@ -9,31 +9,23 @@ import android.os.Parcelable;
 
 public class Horario implements Parcelable {
 
-    private double Hora_Fin;
-    private double Hora_Inicio;
-
-    public Horario(double hora_Fin, double hora_Inicio) {
-        Hora_Fin = hora_Fin;
-        Hora_Inicio = hora_Inicio;
-    }
+    private String horaFin;
+    private String horaIn;
 
     public Horario() {
     }
 
-    public double getHora_Fin() {
-        return Hora_Fin;
+    public Horario(String horaFin, String horaIn) {
+        this.horaFin = horaFin;
+        this.horaIn = horaIn;
     }
 
-    public void setHora_Fin(double hora_Fin) {
-        Hora_Fin = hora_Fin;
+    public String getHoraFin() {
+        return horaFin;
     }
 
-    public double getHora_Inicio() {
-        return Hora_Inicio;
-    }
-
-    public void setHora_Inicio(double hora_Inicio) {
-        Hora_Inicio = hora_Inicio;
+    public void setHoraFin(String horaFin) {
+        this.horaFin = horaFin;
     }
 
 
@@ -44,13 +36,13 @@ public class Horario implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeDouble(this.Hora_Fin);
-        dest.writeDouble(this.Hora_Inicio);
+        dest.writeString(this.horaFin);
+        dest.writeString(this.horaIn);
     }
 
     protected Horario(Parcel in) {
-        this.Hora_Fin = in.readDouble();
-        this.Hora_Inicio = in.readDouble();
+        this.horaFin = in.readString();
+        this.horaIn = in.readString();
     }
 
     public static final Creator<Horario> CREATOR = new Creator<Horario>() {
