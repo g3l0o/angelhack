@@ -1,12 +1,15 @@
 package app.meat.com.m_eat;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 
 /**
  * Created by Rogelio Rivera on 7/8/2017.
  */
 
-public class Product {
+public class Product implements Parcelable{
     private Boolean Disponible;
     private String Imagen;
     private ArrayList<Ingredient> Ingredientes;
@@ -83,6 +86,45 @@ public class Product {
     public void setTamPorcion(String tamPorcion) {
         TamPorcion = tamPorcion;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeValue(this.Disponible);
+        dest.writeString(this.Imagen);
+        dest.writeList(this.Ingredientes);
+        dest.writeString(this.Nombre);
+        dest.writeValue(this.Precio);
+        dest.writeParcelable(this.Vendedor, flags);
+        dest.writeString(this.TamPorcion);
+    }
+
+    protected Product(Parcel in) {
+        this.Disponible = (Boolean) in.readValue(Boolean.class.getClassLoader());
+        this.Imagen = in.readString();
+        this.Ingredientes = new ArrayList<Ingredient>();
+        in.readList(this.Ingredientes, Ingredient.class.getClassLoader());
+        this.Nombre = in.readString();
+        this.Precio = (Long) in.readValue(Long.class.getClassLoader());
+        this.Vendedor = in.readParcelable(app.meat.com.m_eat.Vendedor.class.getClassLoader());
+        this.TamPorcion = in.readString();
+    }
+
+    public static final Creator<Product> CREATOR = new Creator<Product>() {
+        @Override
+        public Product createFromParcel(Parcel source) {
+            return new Product(source);
+        }
+
+        @Override
+        public Product[] newArray(int size) {
+            return new Product[size];
+        }
+    };
 }
 
 
