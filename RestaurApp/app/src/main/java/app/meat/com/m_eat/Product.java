@@ -21,7 +21,7 @@ public class Product implements Parcelable{
     public Product() {
     }
 
-    public Product(Boolean disponible, String imagen, ArrayList<Ingredient> ingredientes, String nombre, Long precio, app.meat.com.m_eat.Vendedor vendedor, String tamPorcion) {
+    public Product(Boolean disponible, String imagen, ArrayList<Ingredient> ingredientes, String nombre, Long precio, Vendedor vendedor, String tamPorcion) {
         Disponible = disponible;
         Imagen = imagen;
         Ingredientes = ingredientes;
@@ -71,11 +71,11 @@ public class Product implements Parcelable{
         Precio = precio;
     }
 
-    public app.meat.com.m_eat.Vendedor getVendedor() {
+    public Vendedor getVendedor() {
         return Vendedor;
     }
 
-    public void setVendedor(app.meat.com.m_eat.Vendedor vendedor) {
+    public void setVendedor(Vendedor vendedor) {
         Vendedor = vendedor;
     }
 
@@ -110,7 +110,7 @@ public class Product implements Parcelable{
         in.readList(this.Ingredientes, Ingredient.class.getClassLoader());
         this.Nombre = in.readString();
         this.Precio = (Long) in.readValue(Long.class.getClassLoader());
-        this.Vendedor = in.readParcelable(app.meat.com.m_eat.Vendedor.class.getClassLoader());
+        this.Vendedor = in.readParcelable(Vendedor.class.getClassLoader());
         this.TamPorcion = in.readString();
     }
 

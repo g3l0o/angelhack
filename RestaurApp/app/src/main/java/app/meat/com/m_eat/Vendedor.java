@@ -11,14 +11,24 @@ public class Vendedor implements Parcelable{
     private String ApMaterno;
     private String ApPaterno;
     private String Nombre;
+    private Long id;
 
-    public Vendedor(String apMaterno, String apPaterno, String nombre) {
+    public Vendedor(String apMaterno, String apPaterno, String nombre, Long id) {
         ApMaterno = apMaterno;
         ApPaterno = apPaterno;
         Nombre = nombre;
+        this.id = id;
     }
 
     public Vendedor() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getApMaterno() {
@@ -45,6 +55,8 @@ public class Vendedor implements Parcelable{
         Nombre = nombre;
     }
 
+    public String getFullName(){return getNombre() + " " + getApPaterno();}
+
     @Override
     public int describeContents() {
         return 0;
@@ -55,12 +67,14 @@ public class Vendedor implements Parcelable{
         dest.writeString(this.ApMaterno);
         dest.writeString(this.ApPaterno);
         dest.writeString(this.Nombre);
+        dest.writeValue(this.id);
     }
 
     protected Vendedor(Parcel in) {
         this.ApMaterno = in.readString();
         this.ApPaterno = in.readString();
         this.Nombre = in.readString();
+        this.id = (Long) in.readValue(Long.class.getClassLoader());
     }
 
     public static final Creator<Vendedor> CREATOR = new Creator<Vendedor>() {
