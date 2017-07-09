@@ -27,7 +27,7 @@ public class Pager extends FragmentStatePagerAdapter {
                 menuFragmentScreen menu = new menuFragmentScreen();
                 return menu;
             case 1:
-                mapFragmentScreen map = new mapFragmentScreen();
+                MapFragment map = new MapFragment();
                 return map;
             default:
                 return null;
