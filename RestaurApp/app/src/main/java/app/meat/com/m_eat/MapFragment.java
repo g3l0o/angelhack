@@ -76,12 +76,20 @@ public class MapFragment extends Fragment {
                 iGoogleMap.setMyLocationEnabled(true);
 
                 // For dropping a marker at a point on the Map
-                LatLng mexicana = new LatLng(19.412040, -99.169121);
-                iGoogleMap.addMarker(new MarkerOptions().position(mexicana).title("Mexicana").snippet("Comida mexicana ospiciada por martin").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_menu_camera)));
+                
+                LatLng mexicana = new LatLng(19.411, -99.169121);
+                LatLng francesa = new LatLng(19.422080, -99.169100);
+                LatLng italiana = new LatLng(19.452020, -99.169200);
+                LatLng japonesa = new LatLng(19.52100, -99.169130);
+
+                iGoogleMap.addMarker(new MarkerOptions().position(mexicana).title("Mexicana").snippet("Comida mexicana ospiciada por martin").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_flag_mex)));
+                iGoogleMap.addMarker(new MarkerOptions().position(italiana).title("Italiana").snippet("Comida mexicana ospiciada por Jair").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_flag_ita)));
+                iGoogleMap.addMarker(new MarkerOptions().position(francesa).title("Francesa").snippet("Comida mexicana ospiciada por Carlos").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_flag_fra)));
+                iGoogleMap.addMarker(new MarkerOptions().position(japonesa).title("Japonesa").snippet("Comida mexicana ospiciada por Hairu").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_flag_jap)));
 
                 // For zooming automatically to the location of the marker
-                CameraPosition cameraPosition = new CameraPosition.Builder().target(mexicana).zoom(12).build();
-                iGoogleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                //CameraPosition cameraPosition = new CameraPosition.Builder().target(mexicana).zoom(12).build();
+                //iGoogleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
             }
         });
 
