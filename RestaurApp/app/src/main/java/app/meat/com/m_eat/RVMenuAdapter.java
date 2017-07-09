@@ -1,5 +1,6 @@
 package app.meat.com.m_eat;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
@@ -47,7 +48,7 @@ public class RVMenuAdapter extends RecyclerView.Adapter<ProductHolder> {
 
     @Override
     public void onBindViewHolder(final ProductHolder holder, int position) {
-        Product product = products.get(position);
+        final Product product = products.get(position);
         holder.productName.setText(product.getNombre());
         holder.vendorName.setText(product.getVendedor().getFullName());
 
@@ -67,20 +68,20 @@ public class RVMenuAdapter extends RecyclerView.Adapter<ProductHolder> {
             });
         }
 
-        holder.cv.setOnClickListener(cardClickListener);
+        holder.cv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(view.getContext(), FoodDetails.class);
+                i.putExtra(FoodDetails.EXTRA_VENDOR, product);
+                view.getContext().startActivity(i);
+            }
+        });
 
     }
 
-    View.OnClickListener cardClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            onClickCardView(v);
-        }
-    };
 
-    public void onClickCardView(View view){
-        Toast.makeText(view.getContext(), "hola", Toast.LENGTH_SHORT).show();
-    }
+
+
 
     @Override
     public int getItemCount() {

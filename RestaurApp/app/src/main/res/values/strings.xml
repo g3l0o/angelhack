@@ -7,4 +7,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_user_profile">UserProfileActivity</string>
+    <string name="title_activity_food_details">A comer...</string>
+
 </resources>
