@@ -13,7 +13,7 @@ public class Pager extends FragmentStatePagerAdapter {
     int tabCount;
 
     //Constructor to the class
-    public Pager(FragmentManager fm, int tabCount) {
+    public Pager(FragmentManager fm) {
         super(fm);
         //Initializing tab count
         this.tabCount= tabCount;
@@ -36,7 +36,20 @@ public class Pager extends FragmentStatePagerAdapter {
     //Overriden method getCount to get the number of tabs
     @Override
     public int getCount() {
-        return tabCount;
+        //return the number of tabs you want in your tabLayout
+        return 2;
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        //this is where you set the titles
+        switch(position) {
+            case 0:
+                return "Menu";
+            case 1:
+                return "Mapa";
+        }
+        return null;
     }
 
 }
