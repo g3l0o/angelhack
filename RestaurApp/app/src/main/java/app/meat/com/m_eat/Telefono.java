@@ -26,7 +26,7 @@ public class Telefono implements Parcelable {
     }
 
 
-    s@Override
+    @Override
     public int describeContents() {
         return 0;
     }
